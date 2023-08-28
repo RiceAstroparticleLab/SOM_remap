@@ -75,6 +75,13 @@ class BlockImageEditor:
         self.fence = fence
         self.output_name = output_name
         self.img_array = np.array(image)
+        _,_,z = np.shape(self.img_array)
+        if z == 3:
+            pass
+        elif z == 4:
+            self.img_array = self.img_array[:,:,:3]
+        else:
+            print("Your image has a wierd number of values in the z dimension")
         [xdim, ydim, zdim] = np.shape(self.img_array)
         #assert xdim == ydim, "Error: not a square SOM"
         blocks_shape = (xdim // block_size, 
