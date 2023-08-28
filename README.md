@@ -1,2 +1,2 @@
 # SOM
-Package for all my function regarding SOMs
+Package for redrawing SOM clusters
